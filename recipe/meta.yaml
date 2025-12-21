@@ -10,8 +10,6 @@ source:
     - {{ cran_mirror }}/src/contrib/densEstBayes_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/densEstBayes/densEstBayes_{{ version }}.tar.gz
   sha256: 8361df9cd4b34fabfca19360bb680a8a3c68386a72bb69cf00dfa19daf97b679
-  source:
-    - 0001-override-PKG_LIBS.patch
 
 build:
   number: 3
