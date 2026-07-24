@@ -52,21 +52,20 @@ requirements:
     - tbb-devel
   run:
     - r-base
-    #- r-bh
     - r-mass
     - r-rcpp
-    - r-rcpparmadillo
-    - r-rcppeigen
-    - r-rcppparallel
-    - r-stanheaders
     - r-rstantools
     - r-nlme
     - r-rstan
 
 test:
+  requires:
+    - r-codetools
   commands:
-    - $R -e "library('densEstBayes')"           # [not win]
-    - "\"%R%\" -e \"library('densEstBayes')\""  # [win]
+    - $R -e "library('densEstBayes')"                                                        # [not win]
+    - $R -e "library('densEstBayes'); densEstBayes(OldFaithful2011,method='NUTS')"           # [not win]
+    - "\"%R%\" -e \"library('densEstBayes')\""                                               # [win]
+    - "\"%R%\" -e \"library('densEstBayes'); densEstBayes(OldFaithful2011,method='NUTS')\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=densEstBayes
